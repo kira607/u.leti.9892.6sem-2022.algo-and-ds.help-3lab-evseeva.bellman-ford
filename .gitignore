@@ -34,3 +34,5 @@
 # other
 build/
 .vscode/
+.idea/
+cmake-build-debug/
