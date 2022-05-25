@@ -1,25 +1,14 @@
 #include "graph.h"
 
-
-bool load_graph(Graph &graph, const std::string &path)
-{
-    try {
-        graph.load("../cities.txt");
-    } catch (std::exception &e) {
-        std::cout << e.what() << '\n';
-        return false;
-    }
-    return true;
-}
-
-
 int main(){
     Graph graph;
 
-    if(!load_graph(graph, "../cities.txt"))
+    if(!loadGraph(graph, "../data/data_1.txt"))
         return 1;
 
-    graph.printNodes();
-    graph.printMatrix();
+    graph.printVertices(); std::cout << '\n';
+    graph.print(); std::cout << '\n';
+    printShortestPath(graph, "A", "F"); std::cout << '\n';
+
     return 0;
 }
